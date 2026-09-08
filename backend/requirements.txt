@@ -4,3 +4,7 @@ uvicorn[standard]>=0.37.0
 SQLAlchemy>=2.0.43
 pydantic>=2.12.0
 python-dotenv>=1.1.0
+
+# Postgres driver. Unused when DATABASE_URL points at SQLite (the default), and
+# required when it points at Postgres, e.g. postgresql+psycopg://...
+psycopg[binary]>=3.2.0
