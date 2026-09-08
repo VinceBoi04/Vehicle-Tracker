@@ -1,0 +1,20 @@
+# Render blueprint. Import this repo as a Blueprint, or copy the build/start
+# commands into a manually created Web Service.
+services:
+  - type: web
+    name: vehicle-tracker-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # Render injects $PORT; the app must bind 0.0.0.0 to be reachable.
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: UNITS
+        value: imperial
+      # Set this to your deployed frontend origin, e.g. https://your-app.vercel.app
+      - key: CORS_ORIGINS
+        sync: false

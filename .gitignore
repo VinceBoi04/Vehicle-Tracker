@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.db
+
+# Node
+node_modules/
+dist/
+
+# Env files (commit only the .example versions)
+.env
+.env.local
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
