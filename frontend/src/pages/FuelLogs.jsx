@@ -163,8 +163,8 @@ export default function FuelLogs() {
               <tr>
                 <th className="th">Date</th>
                 <th className="th">Odometer</th>
-                <th className="th">Volume</th>
-                <th className="th">Price/unit</th>
+                <th className="th">Volume (L)</th>
+                <th className="th">Price/unit ($/L)</th>
                 <th className="th">Total</th>
                 <th className="th">Tank</th>
                 <th className="th">Notes</th>
@@ -234,7 +234,7 @@ export default function FuelLogs() {
                 onChange={(e) => setForm((f) => ({ ...f, odometer: e.target.value }))}
               />
             </Field>
-            <Field label="Volume (gal/L)">
+            <Field label="Volume (L)">
               <input
                 className="input"
                 type="number"
@@ -245,7 +245,7 @@ export default function FuelLogs() {
                 onChange={(e) => updateAmounts({ gallons: e.target.value })}
               />
             </Field>
-            <Field label="Price per unit">
+            <Field label="Price per unit ($/L)">
               <input
                 className="input"
                 type="number"

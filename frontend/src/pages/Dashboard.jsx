@@ -134,7 +134,7 @@ export default function Dashboard() {
     )
   }
 
-  const label = data?.economy.economy_label ?? 'MPG'
+  const label = data?.economy.economy_label ?? 'L/100km'
 
   return (
     <div className="space-y-6">
@@ -305,7 +305,7 @@ export default function Dashboard() {
               {upcoming.length === 0 ? (
                 <p className="py-8 text-center text-sm text-slate-500">
                   Nothing due within {data.maintenance.days_warning_threshold} days or{' '}
-                  {odo(data.maintenance.odometer_warning_threshold)} miles.
+                  {odo(data.maintenance.odometer_warning_threshold)} km.
                 </p>
               ) : (
                 <ul className="divide-y divide-slate-100">
